@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+
   end
 
   def show
@@ -38,7 +39,6 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
